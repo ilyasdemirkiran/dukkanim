@@ -1,8 +1,19 @@
-import type { Component } from 'solid-js';
+import { onMount, type Component } from 'solid-js';
 import MainDrawer from './lib/components/drawer/MainDrawer';
 import { Menu, Package, ShoppingCart, Users } from 'lucide-solid';
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
+import { Capacitor } from '@capacitor/core';
 
 const App: Component<{ children: Element }> = (props) => {
+  onMount(() => {
+    if (!Capacitor.isNativePlatform()) {
+      return;
+    }
+
+    CapacitorUpdater.notifyAppReady();
+  });
+
+
   return (
     <div class="safe-area-container">
       <MainDrawer />
