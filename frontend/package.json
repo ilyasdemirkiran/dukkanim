@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@capacitor/cli": "^8.3.4",
     "@tailwindcss/vite": "^4.1.13",
     "daisyui": "^5.5.20",
     "solid-devtools": "^0.34.3",
@@ -20,7 +21,14 @@
     "vite-plugin-solid": "^2.11.8"
   },
   "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capgo/capacitor-updater": "^8.46.1",
+    "@solidjs/router": "^0.16.1",
+    "@tanstack/solid-query": "^5.100.11",
+    "axios": "^1.16.1",
     "lucide-solid": "^1.16.0",
-    "solid-js": "^1.9.9"
+    "solid-js": "^1.9.9",
+    "solid-toast": "^0.5.0"
   }
 }
