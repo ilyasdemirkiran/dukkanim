@@ -1,40 +1,92 @@
-import { Check } from "lucide-solid";
-import { Component, createSignal } from "solid-js";
-import FiPortal from "../../components/portal/FiPortal";
+import {
+  Package,
+  ShoppingCart,
+  Users,
+} from "lucide-solid";
+import { Component, For, JSXElement } from "solid-js";
 
-const HomePage: Component<{ children: Element }> = (props) => {
-  const [isOpen, setIsOpen] = createSignal(true);
-
-  const toggle = () => setIsOpen(prev => !prev);
+const HomePage: Component = () => {
+  const navigations: NavigationProps[] = [
+    {
+      icon: <Users class="w-8 h-8" />,
+      label: "Müşteriler",
+      description: "Müşteri listesini görüntüle",
+    },
+    {
+      icon: <Package class="w-8 h-8" />,
+      label: "Ürünler",
+      description: "Ürünlerini yönet",
+    },
+    {
+      icon: <ShoppingCart class="w-8 h-8" />,
+      label: "Satışlar",
+      description: "Sipariş ve satış takibi",
+    },
+  ];
 
   return (
-    <div class="card card-lg shadow-lg bg-base-500 w-96 h-96 flex justify-center items-center">
-      <button class="btn btn-square" onclick={toggle}>
-        <Check />
-        {props.children}
-      </button>
-      <FiPortal isOpen={isOpen()} onClose={toggle}>
-        <div class="card bg-base w-full h-full flex justify-center items-center">
-          <div class="card size-96 bg-white flex flex-col items-center py-8" onclick={e => e.stopPropagation()}>
-            <div class="card-title">
-              <h1>Giriş Yap</h1>
-            </div>
-            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-              <legend class="fieldset-legend">Page details</legend>
-
-              <label class="label">Title</label>
-              <input type="text" class="input" placeholder="My awesome page" />
-
-              <label class="label">Slug</label>
-              <input type="text" class="input" placeholder="my-awesome-page" />
-
-              <label class="label">Author</label>
-              <input type="text" class="input" placeholder="Name" />
-            </fieldset>          </div>
-        </div>
-      </FiPortal>
+    <div class="flex flex-col gap-4 p-4 flex-1">
+      <div class="grid grid-cols-1 gap-4">
+        <For each={navigations}>
+          {(item) => <Navigation {...item} />}
+        </For>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default HomePage;
+
+type NavigationProps = {
+  icon: JSXElement;
+  label: string;
+  description: string;
+};
+
+const Navigation: Component<NavigationProps> = (props) => {
+  return (
+    <button
+      class="
+        w-full
+        h-48
+        rounded-3xl
+        bg-base-200
+        active:scale-[0.98]
+        transition-all
+        duration-150
+        p-5
+        shadow-sm
+        border
+        border-base-300
+      "
+    >
+      <div class="flex items-center gap-4">
+        <div
+          class="
+            w-14
+            h-14
+            rounded-2xl
+            bg-primary/10
+            text-primary
+            flex
+            items-center
+            justify-center
+            shrink-0
+          "
+        >
+          {props.icon}
+        </div>
+
+        <div class="flex flex-col items-start text-left flex-1">
+          <span class="text-xl font-semibold">
+            {props.label}
+          </span>
+
+          <span class="text-sm text-base-content/60 mt-1">
+            {props.description}
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+};
