@@ -3,3 +3,8 @@
 .env
 .env.*
 !.env.example
+
+# Android APK / AAB outputs
+*.apk
+*.aab
+build-output/

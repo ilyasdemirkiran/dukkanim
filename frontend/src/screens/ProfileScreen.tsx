@@ -93,7 +93,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                 style={styles.textInput}
                 value={fullName}
                 onChangeText={setFullName}
-                placeholder="Örn: İlyas Demirkıran"
+                placeholder="Adınız Soyadınız"
                 placeholderTextColor="#94A3B8"
               />
             </View>

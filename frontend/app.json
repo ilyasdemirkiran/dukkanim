@@ -1,23 +1,33 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "Özyurt Zahire",
+    "slug": "ozyurt-zahire",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ozyurtzahire.dukkanim"
     },
     "android": {
+      "package": "com.ozyurtzahire.dukkanim",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#0B4F6C",
+        "foregroundImage": "./assets/android-icon-foreground.png"
       },
       "predictiveBackGestureEnabled": false
     },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }

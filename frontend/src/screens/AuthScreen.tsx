@@ -119,7 +119,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onLoginSuccess }) => {
                 <User size={18} color={COLORS.textSecondary} style={styles.inputIcon} />
                 <TextInput
                   style={styles.textInput}
-                  placeholder="İlyas Demirkıran"
+                  placeholder="Adınız Soyadınız"
                   placeholderTextColor="#94A3B8"
                   value={fullNameVal}
                   onChangeText={setFullNameVal}

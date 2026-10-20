@@ -2,15 +2,10 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { Platform } from 'react-native';
 import { SafeStorage } from './storage';
 
-// Platforma göre otomatik Backend Host çözümleme
-const getBaseUrl = () => {
-  if (Platform.OS === 'android') {
-    return 'http://10.0.2.2:4444';
-  }
-  return 'http://localhost:4444';
-};
+// Canlı VPS Sunucu URL (Özyurt Zahire Muhasebe Backend)
+const PROD_API_URL = 'http://213.142.132.232:4444';
 
-export const API_URL = getBaseUrl();
+export const API_URL = PROD_API_URL;
 export const TOKEN_KEY = '@ozyurt_zahire_token';
 export const USER_KEY = '@ozyurt_zahire_user';
 
@@ -39,18 +34,6 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // Android emulator connection fallback
-    const originalRequest = error.config;
-    if (
-      !originalRequest._retry &&
-      error.message &&
-      (error.message.includes('Network Error') || error.code === 'ERR_NETWORK')
-    ) {
-      originalRequest._retry = true;
-      originalRequest.baseURL = 'http://192.168.1.104:4444';
-      return apiClient(originalRequest);
-    }
-
     const message =
       error.response?.data?.error ||
       error.response?.data?.message ||
