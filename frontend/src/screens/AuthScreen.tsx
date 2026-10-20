@@ -14,7 +14,7 @@ import { useForm } from 'react-hook-form';
 import { useMutation } from '@tanstack/react-query';
 import { FormPhoneInput } from '../components/FormPhoneInput';
 import { OttomanBackground, OttomanTughraLogo } from '../components/OttomanGraphics';
-import { apiClient, TOKEN_KEY, USER_KEY } from '../services/api';
+import { apiClient, TOKEN_KEY, USER_KEY, formatPhoneNumber } from '../services/api';
 import { SafeStorage } from '../services/storage';
 import { COLORS } from '../theme/colors';
 import { Lock, User, ShieldCheck } from 'lucide-react-native';
@@ -53,7 +53,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onLoginSuccess }) => {
       if (data.token) {
         await SafeStorage.setItem(TOKEN_KEY, data.token);
         await SafeStorage.setItem(USER_KEY, JSON.stringify(data.user));
-        showToast.success('Giriş Başarılı', `Hoş geldiniz, ${data.user?.fullName || data.user?.phone || ''}`);
+        showToast.success('Giriş Başarılı', `Hoş geldiniz, ${data.user?.fullName || formatPhoneNumber(data.user?.phone) || ''}`);
         onLoginSuccess(data.user);
       }
     },

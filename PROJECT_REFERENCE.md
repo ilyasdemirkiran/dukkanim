@@ -49,6 +49,10 @@ Bu doküman, **Özyurt Zahire** projesinin tüm mimarisini, veri modellerini, i�
    - **Kalem Bazında İndirim:** Yüzdelik (`%`) veya doğrudan Tutar (kuruş) olarak uygulanabilir.
    - **Kalem Bazında KDV:** Her kalemin KDV oranı ayrı ayrı hesaplanır.
    - **Toplu İndirim & Toplu KDV:** Faturadaki tüm ürün kalemlerine tek tıkla toplu indirim ve toplu KDV uygulanabilir.
+7. **Telefon Numaralarının Gösterimi (KESİN VE DEĞİŞMEZ KURAL):**
+   - **HER NEREDE OLURSA OLSUN**, bir telefon numarası ekranda kullanıcıya gösterilecekse (kartlar, açılır menüler/dropdown'lar, listeler, üst bar/header, profil, fişler vb.) **MUTLAKA FORMATLANMIŞ ŞEKİLDE GÖSTERİLECEKTİR** (Örn: `+90 545 555 55 55` veya `0545 555 55 55`).
+   - Asla ham, bitişik veya biçimlendirilmemiş metin (örn: `5455555555` ya da `+905455555555`) olarak ekrana basılamaz.
+   - Bu işlem için projedeki merkezi `formatPhoneNumber` (`src/services/api.ts`) yardımcısı kullanılmalıdır.
 
 ---
 

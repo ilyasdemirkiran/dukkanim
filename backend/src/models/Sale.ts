@@ -81,7 +81,7 @@ export interface ISale extends Document {
   
   note?: string;
   status: SaleStatus;
-  date: Date;
+  date: string; // LocalDate format: 'YYYY-MM-DD'
   createdAt: Date;
   updatedAt: Date;
 }
@@ -144,8 +144,9 @@ const SaleSchema = new Schema<ISale>(
       default: SaleStatus.COMPLETED,
     },
     date: {
-      type: Date,
-      default: Date.now,
+      type: String,
+      default: () => new Date().toISOString().split('T')[0],
+      index: true,
     },
   },
   {

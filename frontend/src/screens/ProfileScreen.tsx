@@ -12,8 +12,7 @@ import {
 } from 'react-native';
 import { COLORS } from '../theme/colors';
 import { User, Phone, Save, LogOut, CheckCircle2, ShieldCheck } from 'lucide-react-native';
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
-import { apiClient, USER_KEY } from '../services/api';
+import { apiClient, USER_KEY, formatPhoneNumber } from '../services/api';
 import { SafeStorage } from '../services/storage';
 import { showToast } from '../services/toast';
 
@@ -31,21 +30,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
   const [fullName, setFullName] = useState<string>(currentUser?.fullName || '');
   const [isSaving, setIsSaving] = useState<boolean>(false);
 
-  // Telefon numarasını uluslararası/ulusal formatta biçimlendirme
-  const formatPhoneNumber = (rawPhone?: string) => {
-    if (!rawPhone) return '-';
-    try {
-      const parsed = parsePhoneNumberFromString(rawPhone, 'TR');
-      if (parsed) {
-        return parsed.formatInternational(); // örn: +90 532 123 45 67
-      }
-      return rawPhone;
-    } catch {
-      return rawPhone;
-    }
-  };
-
-  const formattedPhone = formatPhoneNumber(currentUser?.phone);
+  const formattedPhone = formatPhoneNumber(currentUser?.phone) || '-';
 
   const handleSave = async () => {
     if (!fullName.trim()) {

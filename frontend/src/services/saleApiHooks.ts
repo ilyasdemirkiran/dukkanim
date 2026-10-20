@@ -9,7 +9,7 @@ import {
 } from '../types/sale';
 
 // 1. Satışları Listeleme
-export function useSalesQuery(filter?: { currentAccountId?: string; status?: string; search?: string }) {
+export function useSalesQuery(filter?: { currentAccountId?: string; status?: string; search?: string; date?: string }) {
   return useQuery<Sale[]>({
     queryKey: saleQueryKeys.list(filter),
     queryFn: async () => {

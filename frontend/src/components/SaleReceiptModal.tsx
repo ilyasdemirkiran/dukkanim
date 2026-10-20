@@ -9,13 +9,18 @@ import {
   Platform,
   Share,
   Alert,
+  ActivityIndicator,
 } from 'react-native';
 import { COLORS } from '../theme/colors';
 import { formatCurrency } from '../services/api';
 import { Sale } from '../types/sale';
-import { X, Printer, Share2, Receipt, CheckCircle, Sparkles } from 'lucide-react-native';
+import { X, Printer, Share2, Receipt, CheckCircle, Sparkles, FileText } from 'lucide-react-native';
 import { OttomanTughraLogo } from './OttomanGraphics';
 import { showToast } from '../services/toast';
+
+import * as Print from 'expo-print';
+import * as Sharing from 'expo-sharing';
+import * as FileSystem from 'expo-file-system/legacy';
 
 interface SaleReceiptModalProps {
   visible: boolean;
@@ -28,6 +33,8 @@ export const SaleReceiptModal: React.FC<SaleReceiptModalProps> = ({
   sale,
   onClose,
 }) => {
+  const [isGeneratingPdf, setIsGeneratingPdf] = React.useState(false);
+
   if (!sale) return null;
 
   const cariTitle =
@@ -40,6 +47,281 @@ export const SaleReceiptModal: React.FC<SaleReceiptModalProps> = ({
     hour: '2-digit',
     minute: '2-digit',
   });
+
+  const generateReceiptHtml = () => {
+    const itemsHtml = (sale.items || [])
+      .map(
+        (item) => `
+        <tr>
+          <td style="padding: 8px 4px; border-bottom: 1px dashed #e2e8f0; font-size: 13px; color: #1e293b;">
+            <strong>${item.productName}</strong>
+            ${
+              item.discountAmount > 0
+                ? `<div style="font-size: 11px; color: #ef4444; margin-top: 2px;">(-${formatCurrency(item.discountAmount)} ind.)</div>`
+                : ''
+            }
+          </td>
+          <td style="padding: 8px 4px; border-bottom: 1px dashed #e2e8f0; text-align: center; font-size: 13px; color: #475569;">
+            ${item.quantity} ${item.unitName || 'Adet'}
+          </td>
+          <td style="padding: 8px 4px; border-bottom: 1px dashed #e2e8f0; text-align: right; font-size: 13px; font-weight: 700; color: #0b4f6c;">
+            ${formatCurrency(item.netTotal)}
+          </td>
+        </tr>
+      `
+      )
+      .join('');
+
+    return `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Satış Fişi - ${sale.saleNumber}</title>
+          <style>
+            @page {
+              margin: 15mm;
+              size: A4 portrait;
+            }
+            body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+              color: #0f172a;
+              background-color: #ffffff;
+              margin: 0;
+              padding: 0;
+            }
+            .container {
+              max-width: 580px;
+              margin: 0 auto;
+              border: 1px solid #e2e8f0;
+              border-radius: 12px;
+              padding: 24px;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            }
+            .header {
+              text-align: center;
+              border-bottom: 2px solid #0b4f6c;
+              padding-bottom: 16px;
+              margin-bottom: 16px;
+            }
+            .logo-circle {
+              width: 54px;
+              height: 54px;
+              border-radius: 27px;
+              background-color: #f0f9ff;
+              border: 2px solid #0b4f6c;
+              color: #0b4f6c;
+              font-weight: 900;
+              font-size: 22px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 8px auto;
+              line-height: 54px;
+            }
+            .company-name {
+              font-size: 20px;
+              font-weight: 900;
+              color: #0b4f6c;
+              letter-spacing: 1.5px;
+              margin: 0;
+            }
+            .tagline {
+              font-size: 12px;
+              color: #64748b;
+              margin-top: 4px;
+              font-weight: 500;
+            }
+            .meta-section {
+              margin-bottom: 16px;
+              font-size: 13px;
+              background-color: #f8fafc;
+              padding: 12px 14px;
+              border-radius: 8px;
+            }
+            .meta-row {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 6px;
+            }
+            .meta-row:last-child {
+              margin-bottom: 0;
+            }
+            .meta-label {
+              color: #64748b;
+              font-weight: 500;
+            }
+            .meta-val {
+              font-weight: 700;
+              color: #0f172a;
+            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 8px;
+              margin-bottom: 16px;
+            }
+            th {
+              font-size: 12px;
+              text-transform: uppercase;
+              color: #64748b;
+              padding: 8px 4px;
+              border-bottom: 1.5px solid #cbd5e1;
+              text-align: left;
+            }
+            .totals {
+              border-top: 2px dashed #cbd5e1;
+              padding-top: 12px;
+              margin-top: 12px;
+            }
+            .tot-row {
+              display: flex;
+              justify-content: space-between;
+              font-size: 13px;
+              margin-bottom: 6px;
+              color: #475569;
+            }
+            .tot-grand {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 18px;
+              font-weight: 900;
+              color: #0b4f6c;
+              border-top: 2px solid #0b4f6c;
+              padding-top: 10px;
+              margin-top: 10px;
+            }
+            .grand-amount {
+              color: #10b981;
+            }
+            .footer-msg {
+              text-align: center;
+              margin-top: 28px;
+              padding-top: 16px;
+              border-top: 1px dashed #cbd5e1;
+              color: #64748b;
+              font-size: 12px;
+            }
+            .footer-msg strong {
+              color: #0b4f6c;
+              display: block;
+              margin-bottom: 4px;
+              font-size: 13px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <div class="logo-circle">ÖZ</div>
+              <h1 class="company-name">ÖZYURT ZAHİRE</h1>
+              <div class="tagline">Toptan & Perakende Zahirecilik - Satış Fişi</div>
+            </div>
+
+            <div class="meta-section">
+              <div class="meta-row">
+                <span class="meta-label">Fiş Numarası:</span>
+                <span class="meta-val">${sale.saleNumber}</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Düzenleme Tarihi:</span>
+                <span class="meta-val">${saleDateFormatted}</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Müşteri / Cari:</span>
+                <span class="meta-val">${cariTitle}</span>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 50%;">Kalem</th>
+                  <th style="width: 25%; text-align: center;">Miktar</th>
+                  <th style="width: 25%; text-align: right;">Tutar</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${itemsHtml}
+              </tbody>
+            </table>
+
+            <div class="totals">
+              <div class="tot-row">
+                <span>Ara Toplam (Brüt):</span>
+                <span>${formatCurrency(sale.totalGross)}</span>
+              </div>
+              ${
+                sale.totalDiscount > 0
+                  ? `<div class="tot-row" style="color: #ef4444;">
+                      <span>Toplam İndirim:</span>
+                      <span>-${formatCurrency(sale.totalDiscount)}</span>
+                    </div>`
+                  : ''
+              }
+              <div class="tot-row">
+                <span>Toplam KDV:</span>
+                <span>+${formatCurrency(sale.totalVat)}</span>
+              </div>
+              <div class="tot-grand">
+                <span>ÖDENECEK TUTAR:</span>
+                <span class="grand-amount">${formatCurrency(sale.grandTotal)}</span>
+              </div>
+            </div>
+
+            <div class="footer-msg">
+              <strong>Bizi tercih ettiğiniz için teşekkür ederiz!</strong>
+              İyi günlerde kullanınız.
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+  };
+
+  const handleSharePdf = async () => {
+    try {
+      setIsGeneratingPdf(true);
+      const isAvailable = await Sharing.isAvailableAsync();
+      if (!isAvailable) {
+        showToast.warning('Uyarı', 'Bu cihazda dosya paylaşımı desteklenmiyor.');
+        return;
+      }
+
+      const html = generateReceiptHtml();
+      
+      // Android Expo Go ortamında Print.printToFileAsync geçici dosya okuma izin hatasını
+      // aşmak için base64: true olarak üretip doğrudan kendi dosya dizinimize yazıyoruz.
+      const file = await Print.printToFileAsync({
+        html,
+        base64: true,
+      });
+
+      const safeFileName = `Satis_Fisi_${sale.saleNumber || Date.now()}.pdf`.replace(/[^a-zA-Z0-9._-]/g, '_');
+      const targetDirectory = FileSystem.documentDirectory || FileSystem.cacheDirectory;
+      const targetUri = `${targetDirectory}${safeFileName}`;
+
+      if (file.base64) {
+        await FileSystem.writeAsStringAsync(targetUri, file.base64, {
+          encoding: FileSystem.EncodingType.Base64,
+        });
+      }
+
+      await Sharing.shareAsync(targetUri, {
+        mimeType: 'application/pdf',
+        dialogTitle: `Satış Fişi - ${sale.saleNumber}`,
+        UTI: 'com.adobe.pdf',
+      });
+      showToast.success('Başarılı', 'PDF fişi hazırlandı.');
+    } catch (err: any) {
+      console.error('PDF paylaşım hatası:', err);
+      showToast.error('Hata', 'PDF oluşturulurken veya paylaşılırken hata meydana geldi.');
+    } finally {
+      setIsGeneratingPdf(false);
+    }
+  };
 
   const generateReceiptText = () => {
     let text = `================================\n`;
@@ -78,7 +360,7 @@ export const SaleReceiptModal: React.FC<SaleReceiptModalProps> = ({
     return text;
   };
 
-  const handleShare = async () => {
+  const handleShareText = async () => {
     try {
       const content = generateReceiptText();
       await Share.share({
@@ -212,11 +494,31 @@ export const SaleReceiptModal: React.FC<SaleReceiptModalProps> = ({
             </View>
           </ScrollView>
 
-          {/* Aksiyon Butonları (Paylaş & Kapat) */}
+          {/* Aksiyon Butonları (PDF Gönder & Metin Paylaş) */}
           <View style={styles.actionRow}>
-            <TouchableOpacity style={styles.shareBtn} onPress={handleShare} activeOpacity={0.8}>
-              <Share2 size={18} color="#FFFFFF" />
-              <Text style={styles.shareBtnText}>Fişi Paylaş / Gönder</Text>
+            <TouchableOpacity
+              style={[styles.pdfBtn, isGeneratingPdf && styles.btnDisabled]}
+              onPress={handleSharePdf}
+              disabled={isGeneratingPdf}
+              activeOpacity={0.8}
+            >
+              {isGeneratingPdf ? (
+                <ActivityIndicator size="small" color="#FFFFFF" />
+              ) : (
+                <FileText size={18} color="#FFFFFF" />
+              )}
+              <Text style={styles.pdfBtnText}>
+                {isGeneratingPdf ? 'PDF Hazırlanıyor...' : 'PDF Olarak Gönder'}
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.textShareBtn}
+              onPress={handleShareText}
+              activeOpacity={0.8}
+            >
+              <Share2 size={18} color={COLORS.primary} />
+              <Text style={styles.textShareBtnText}>Metin Paylaş</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -429,8 +731,11 @@ const styles = StyleSheet.create({
   actionRow: {
     paddingHorizontal: 20,
     paddingTop: 10,
+    flexDirection: 'row',
+    gap: 10,
   },
-  shareBtn: {
+  pdfBtn: {
+    flex: 1.6,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -444,9 +749,30 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 4,
   },
-  shareBtnText: {
+  pdfBtnText: {
     color: '#FFFFFF',
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '800',
   },
+  textShareBtn: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    backgroundColor: '#F1F5F9',
+    borderWidth: 1,
+    borderColor: '#CBD5E1',
+    borderRadius: 14,
+    paddingVertical: 14,
+  },
+  textShareBtnText: {
+    color: COLORS.primary,
+    fontSize: 13,
+    fontWeight: '700',
+  },
+  btnDisabled: {
+    opacity: 0.7,
+  },
 });
+

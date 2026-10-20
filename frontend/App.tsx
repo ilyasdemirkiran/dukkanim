@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {
-  SafeAreaView,
   View,
   Text,
   TouchableOpacity,
@@ -9,8 +8,9 @@ import {
   ActivityIndicator,
   Platform,
 } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { TOKEN_KEY, USER_KEY } from './src/services/api';
+import { TOKEN_KEY, USER_KEY, formatPhoneNumber } from './src/services/api';
 import { SafeStorage } from './src/services/storage';
 import { AuthScreen } from './src/screens/AuthScreen';
 import { ProductsScreen } from './src/screens/ProductsScreen';
@@ -102,7 +102,7 @@ function MainApp() {
             <View style={styles.userBadgeRow}>
               <View style={styles.onlineDot} />
               <Text style={styles.topUserGreeting} numberOfLines={1}>
-                {currentUser.fullName || currentUser.phone}
+                {currentUser.fullName || formatPhoneNumber(currentUser.phone)}
               </Text>
             </View>
           </View>
@@ -248,13 +248,15 @@ export default function App() {
   const statusBarHeight = Platform.OS === 'android' ? (StatusBar.currentHeight || 28) : 44;
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <MainApp />
-      <Toast
-        config={toastConfig}
-        topOffset={statusBarHeight + 70}
-      />
-    </QueryClientProvider>
+    <SafeAreaProvider>
+      <QueryClientProvider client={queryClient}>
+        <MainApp />
+        <Toast
+          config={toastConfig}
+          topOffset={statusBarHeight + 70}
+        />
+      </QueryClientProvider>
+    </SafeAreaProvider>
   );
 }
 

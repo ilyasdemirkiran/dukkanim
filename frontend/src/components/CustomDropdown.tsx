@@ -70,14 +70,22 @@ export const CustomDropdown: React.FC<CustomDropdownProps> = ({
         }}
         activeOpacity={0.7}
       >
-        <Text
-          style={[
-            styles.triggerText,
-            !selectedItem && styles.triggerTextPlaceholder,
-          ]}
-        >
-          {selectedItem ? selectedItem.label : placeholder}
-        </Text>
+        <View style={{ flex: 1, paddingRight: 8 }}>
+          <Text
+            style={[
+              styles.triggerText,
+              !selectedItem && styles.triggerTextPlaceholder,
+            ]}
+            numberOfLines={1}
+          >
+            {selectedItem ? selectedItem.label : placeholder}
+          </Text>
+          {selectedItem?.subtitle ? (
+            <Text style={styles.triggerSubtitleText} numberOfLines={1}>
+              {selectedItem.subtitle}
+            </Text>
+          ) : null}
+        </View>
         <ChevronDown size={18} color={COLORS.textSecondary} />
       </TouchableOpacity>
 
@@ -242,6 +250,12 @@ const styles = StyleSheet.create({
   triggerTextPlaceholder: {
     color: COLORS.border,
     fontWeight: '400',
+  },
+  triggerSubtitleText: {
+    fontSize: 12,
+    color: COLORS.textSecondary,
+    marginTop: 2,
+    fontWeight: '500',
   },
   emptyWarningBox: {
     flexDirection: 'row',

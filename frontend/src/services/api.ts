@@ -95,3 +95,51 @@ export function tlToKurus(tlString: string | number): number {
   const num = parseFloat(clean);
   return isNaN(num) ? 0 : Math.round(num * 100);
 }
+
+/**
+ * Telefon Numarası Formatlayıcı
+ * Proje genelinde telefon gösteriminin daima kurumsal ve okunaklı (+90 5XX XXX XX XX veya 05XX XXX XX XX)
+ * olmasını garanti eder.
+ */
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+
+export function formatPhoneNumber(
+  rawPhone?: string | null,
+  format: 'NATIONAL' | 'INTERNATIONAL' = 'INTERNATIONAL'
+): string {
+  if (!rawPhone) return '';
+  const trimmed = String(rawPhone).trim();
+  if (!trimmed) return '';
+
+  try {
+    const parsed = parsePhoneNumberFromString(trimmed, 'TR');
+    if (parsed && parsed.isValid()) {
+      return format === 'NATIONAL' ? parsed.formatNational() : parsed.formatInternational();
+    }
+    // Geçersiz veya eksik olsa bile olabildiğince formatlamaya çalış
+    if (parsed) {
+      return format === 'NATIONAL' ? parsed.formatNational() : parsed.formatInternational();
+    }
+  } catch {
+    // fallback
+  }
+
+  // Regex fallback: 10 hane ise 05XX XXX XX XX veya +90 5XX XXX XX XX yap
+  const digits = trimmed.replace(/\D/g, '');
+  if (digits.length === 10) {
+    // 5321234567 -> +90 532 123 45 67
+    return `+90 ${digits.slice(0, 3)} ${digits.slice(3, 6)} ${digits.slice(6, 8)} ${digits.slice(8, 10)}`;
+  }
+  if (digits.length === 11 && digits.startsWith('0')) {
+    // 05321234567 -> +90 532 123 45 67
+    const d = digits.slice(1);
+    return `+90 ${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 8)} ${d.slice(8, 10)}`;
+  }
+  if (digits.length === 12 && digits.startsWith('90')) {
+    const d = digits.slice(2);
+    return `+90 ${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 8)} ${d.slice(8, 10)}`;
+  }
+
+  return trimmed;
+}
+

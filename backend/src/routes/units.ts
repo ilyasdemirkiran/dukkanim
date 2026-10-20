@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { Unit } from '../models/Unit';
-import { Product } from '../models/Product';
+import { Product, ProductStatus } from '../models/Product';
 import { authMiddleware } from '../middleware/auth';
 
 export const unitRoutes = new Hono();
@@ -91,7 +91,7 @@ unitRoutes.delete('/:id', async (c) => {
 unitRoutes.get('/:id/products', async (c) => {
   try {
     const unitId = c.req.param('id');
-    const products = await Product.find({ unitId, status: { $ne: 'DELETED' } }).populate('unitId');
+    const products = await Product.find({ unitId: unitId as any, status: { $ne: ProductStatus.DELETED } }).populate('unitId');
     return c.json(products);
   } catch (err: any) {
     return c.json({ error: err.message }, 500);

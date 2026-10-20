@@ -48,6 +48,7 @@ export interface Sale {
 export interface CreateSalePayload {
   currentAccountId: string;
   note?: string;
+  date?: string; // LocalDate format: 'YYYY-MM-DD'
 }
 
 export interface AddSaleItemPayload {

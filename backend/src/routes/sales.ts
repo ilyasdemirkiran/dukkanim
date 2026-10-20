@@ -13,11 +13,12 @@ saleRoutes.use('*', authMiddleware);
 // GET /api/sales - Satışları Listele
 saleRoutes.get('/', async (c) => {
   try {
-    const { currentAccountId, status, search } = c.req.query();
+    const { currentAccountId, status, search, date } = c.req.query();
     const filter: any = {};
 
     if (currentAccountId) filter.currentAccountId = currentAccountId;
     if (status) filter.status = status;
+    if (date) filter.date = date; // 'YYYY-MM-DD'
     if (search) {
       filter.saleNumber = { $regex: search, $options: 'i' };
     }
@@ -46,7 +47,7 @@ saleRoutes.get('/:id', async (c) => {
 // POST /api/sales - Yeni Satış Başlat (Cari seçimi ve isteğe bağlı ürünler)
 saleRoutes.post('/', async (c) => {
   try {
-    const { currentAccountId, items: rawItems, note, saleNumber: customSaleNumber } = await c.req.json();
+    const { currentAccountId, items: rawItems, note, saleNumber: customSaleNumber, date: customDate } = await c.req.json();
 
     if (!currentAccountId) {
       return c.json({ error: 'Cari seçimi zorunludur.' }, 400);
@@ -87,6 +88,11 @@ saleRoutes.post('/', async (c) => {
 
     const totals = calculateSaleTotals(processedItems);
 
+    // LocalDate format (YYYY-MM-DD)
+    const saleDate = customDate && /^\d{4}-\d{2}-\d{2}$/.test(customDate.trim())
+      ? customDate.trim()
+      : new Date().toISOString().split('T')[0];
+
     const sale = await Sale.create({
       saleNumber,
       currentAccountId,
@@ -97,6 +103,7 @@ saleRoutes.post('/', async (c) => {
       totalVat: totals.totalVat,
       grandTotal: totals.grandTotal,
       note: note?.trim(),
+      date: saleDate,
       status: SaleStatus.COMPLETED,
     });
 
@@ -189,6 +196,10 @@ saleRoutes.put('/:id/items/:itemId', async (c) => {
     }
 
     const currentItem = sale.items[itemIndex];
+    if (!currentItem) {
+      return c.json({ error: 'Satış kalemi bulunamadı.' }, 404);
+    }
+
     const product = await Product.findById(currentItem.productId).populate('unitId');
 
     const updatedItem = calculateSaleItem(product || currentItem.snapshot, {
@@ -252,6 +263,7 @@ saleRoutes.post('/:id/apply-bulk', async (c) => {
     // Her bir kaleme toplu indirim / kdv uygula ve baştan hesapla
     for (let i = 0; i < sale.items.length; i++) {
       const item = sale.items[i];
+      if (!item) continue;
       const product = await Product.findById(item.productId).populate('unitId');
 
       const updatedItem = calculateSaleItem(product || item.snapshot, {

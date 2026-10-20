@@ -15,8 +15,12 @@ export const authMiddleware: MiddlewareHandler = async (c, next) => {
   }
 
   const token = authHeader.split(' ')[1];
+  if (!token) {
+    return c.json({ error: 'Yetkisiz erişim. Token bulunamadı.' }, 401);
+  }
+
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as AuthUserPayload;
+    const decoded = jwt.verify(token, JWT_SECRET) as unknown as AuthUserPayload;
     c.set('user', decoded);
     await next();
   } catch (err) {

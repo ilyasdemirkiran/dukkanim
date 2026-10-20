@@ -35,11 +35,12 @@ import {
   useUpdateContactMutation,
   useDeleteContactMutation,
 } from '../services/currentAccountApiHooks';
-import { useSalesQuery } from '../services/saleApiHooks';
+import { useSalesQuery, useCreateSaleMutation } from '../services/saleApiHooks';
 import { SaleDetailScreen } from './SaleDetailScreen';
 import { CompanyForm, CompanyFormData } from '../components/forms/CompanyForm';
 import { ContactModalForm, ContactFormData } from '../components/forms/ContactModalForm';
-import { formatCurrency } from '../services/api';
+import { CreateSaleForm, CreateSaleFormData } from '../components/forms/CreateSaleForm';
+import { formatCurrency, formatPhoneNumber } from '../services/api';
 import { showToast } from '../services/toast';
 
 interface CurrentAccountDetailScreenProps {
@@ -67,6 +68,7 @@ export const CurrentAccountDetailScreen: React.FC<CurrentAccountDetailScreenProp
   // Modallar
   const [companyModalVisible, setCompanyModalVisible] = useState(false);
   const [contactModalVisible, setContactModalVisible] = useState(false);
+  const [createSaleModalVisible, setCreateSaleModalVisible] = useState(false);
   const [editingContact, setEditingContact] = useState<ContactCard | null>(null);
 
   // Mutations
@@ -74,6 +76,25 @@ export const CurrentAccountDetailScreen: React.FC<CurrentAccountDetailScreenProp
   const addContactMutation = useAddContactMutation();
   const updateContactMutation = useUpdateContactMutation();
   const deleteContactMutation = useDeleteContactMutation();
+  const createSaleMutation = useCreateSaleMutation();
+
+  const handleCreateSale = (formData: CreateSaleFormData) => {
+    createSaleMutation.mutate(
+      {
+        currentAccountId: account._id,
+        note: formData.note.trim(),
+        date: formData.date,
+      },
+      {
+        onSuccess: (newSale) => {
+          setCreateSaleModalVisible(false);
+          setSelectedSaleId(newSale._id);
+          showToast.success('Fatura Oluşturuldu', `"${newSale.saleNumber}" faturası açıldı.`);
+        },
+        onError: (err) => showToast.error('Hata', err.message),
+      }
+    );
+  };
 
   const syncAccount = (updated: CurrentAccount) => {
     setAccount(updated);
@@ -341,7 +362,9 @@ export const CurrentAccountDetailScreen: React.FC<CurrentAccountDetailScreenProp
 
                     <View style={styles.contactPhoneRow}>
                       <Phone size={14} color={COLORS.primary} />
-                      <Text style={styles.contactPhoneText}>{contact.phone}</Text>
+                      <Text style={styles.contactPhoneText}>
+                        {formatPhoneNumber(contact.phone)}
+                      </Text>
                     </View>
 
                     {contact.description ? (
@@ -382,16 +405,20 @@ export const CurrentAccountDetailScreen: React.FC<CurrentAccountDetailScreenProp
       ) : (
         /* SATIŞLAR TABI: MÜŞTERİYE AİT TÜM SATIŞLARIN LİSTESİ */
         <ScrollView contentContainerStyle={styles.scrollContent}>
-          {/* Toplam Satış Özeti Kartı */}
+          {/* Toplam Satış Özeti Kartı & Hızlı Satış Butonu */}
           <View style={styles.salesSummaryBanner}>
             <View>
               <Text style={styles.summaryBannerSub}>Toplam Satış Hacmi</Text>
               <Text style={styles.summaryBannerAmount}>{formatCurrency(totalSalesRevenue)}</Text>
             </View>
-            <View style={styles.summaryBannerCountBadge}>
-              <Receipt size={16} color="#0B4F6C" />
-              <Text style={styles.summaryBannerCountText}>{sales.length} Fatura / Sipariş</Text>
-            </View>
+            <TouchableOpacity
+              style={styles.directNewSaleBtn}
+              onPress={() => setCreateSaleModalVisible(true)}
+              activeOpacity={0.8}
+            >
+              <Plus size={16} color="#FFFFFF" />
+              <Text style={styles.directNewSaleBtnText}>Satış Oluştur</Text>
+            </TouchableOpacity>
           </View>
 
           {isSalesLoading ? (
@@ -403,6 +430,14 @@ export const CurrentAccountDetailScreen: React.FC<CurrentAccountDetailScreenProp
               <Text style={styles.emptySalesSubtitle}>
                 Bu cari hesaba ait henüz herhangi bir satış işlemi oluşturulmamış.
               </Text>
+              <TouchableOpacity
+                style={[styles.directNewSaleBtn, { marginTop: 14, paddingHorizontal: 20 }]}
+                onPress={() => setCreateSaleModalVisible(true)}
+                activeOpacity={0.8}
+              >
+                <Plus size={16} color="#FFFFFF" />
+                <Text style={styles.directNewSaleBtnText}>İlk Satışı Başlat</Text>
+              </TouchableOpacity>
             </View>
           ) : (
             sales.map((sale) => (
@@ -601,6 +636,32 @@ export const CurrentAccountDetailScreen: React.FC<CurrentAccountDetailScreenProp
             </ScrollView>
           </View>
         </KeyboardAvoidingView>
+      </Modal>
+
+      {/* BU CARİ İÇİN DİREKT SATIŞ BAŞLATMA MODALI */}
+      <Modal visible={createSaleModalVisible} transparent animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.saleModalContent}>
+            <View style={styles.modalHeader}>
+              <View>
+                <Text style={styles.modalTitle}>Yeni Satış Aç</Text>
+                <Text style={styles.modalSubtitle}>
+                  {account.title} için doğrudan fatura/satış başlatın
+                </Text>
+              </View>
+              <TouchableOpacity onPress={() => setCreateSaleModalVisible(false)}>
+                <X size={22} color={COLORS.textDark} />
+              </TouchableOpacity>
+            </View>
+
+            <CreateSaleForm
+              accounts={[account]}
+              initialAccountId={account._id}
+              onSubmit={handleCreateSale}
+              isLoading={createSaleMutation.isPending}
+            />
+          </View>
+        </View>
       </Modal>
     </View>
   );
@@ -1135,4 +1196,32 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: COLORS.primary,
   },
+  modalSubtitle: {
+    fontSize: 12,
+    color: COLORS.textSecondary,
+    marginTop: 2,
+    fontWeight: '500',
+  },
+  saleModalContent: {
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    padding: 20,
+    maxHeight: '85%',
+  },
+  directNewSaleBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  directNewSaleBtnText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '700',
+  },
 });
+
