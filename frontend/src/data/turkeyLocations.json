@@ -1,0 +1,1873 @@
+[
+  {
+    "cityName": "",
+    "cityCode": 0,
+    "location": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "districts": []
+  },
+  {
+    "cityName": "ADANA",
+    "cityCode": 1,
+    "location": {
+      "latitude": "36.992999213765806",
+      "longitude": "35.33475601297565"
+    },
+    "districts": [
+      "ALADAĞ",
+      "CEYHAN",
+      "ÇUKUROVA",
+      "FEKE",
+      "İMAMOĞLU",
+      "KARAİSALI",
+      "KARATAŞ",
+      "KOZAN",
+      "POZANTI",
+      "SAİMBEYLİ",
+      "Şakirpaşa Havalimanı",
+      "SARIÇAM",
+      "SEYHAN",
+      "TUFANBEYLİ",
+      "YUMURTALIK",
+      "YÜREĞİR"
+    ]
+  },
+  {
+    "cityName": "ADIYAMAN",
+    "cityCode": 2,
+    "location": {
+      "latitude": "37.76434641833569",
+      "longitude": "38.27685795850379"
+    },
+    "districts": [
+      "Adıyaman Havalimanı",
+      "BESNİ",
+      "ÇELİKHAN",
+      "GERGER",
+      "GÖLBAŞI",
+      "KAHTA",
+      "MERKEZ",
+      "SAMSAT",
+      "SİNCİK",
+      "TUT"
+    ]
+  },
+  {
+    "cityName": "AFYONKARAHİSAR",
+    "cityCode": 3,
+    "location": {
+      "latitude": "38.75727979547636",
+      "longitude": "30.536640592670434"
+    },
+    "districts": [
+      "Afyon Havalimanı",
+      "BAŞMAKÇI",
+      "BAYAT",
+      "BOLVADİN",
+      "ÇAY",
+      "ÇOBANLAR",
+      "DAZKIRI",
+      "DİNAR",
+      "EMİRDAĞ",
+      "EVCİLER",
+      "HOCALAR",
+      "İHSANİYE",
+      "İSCEHİSAR",
+      "KIZILÖREN",
+      "MERKEZ",
+      "SANDIKLI",
+      "SİNANPAŞA",
+      "ŞUHUT",
+      "SULTANDAĞI"
+    ]
+  },
+  {
+    "cityName": "AĞRI",
+    "cityCode": 4,
+    "location": {
+      "latitude": "39.622447426754064",
+      "longitude": "43.01676727139034"
+    },
+    "districts": [
+      "Ağrı Ahmed-i Hani Havalimanı",
+      "DİYADİN",
+      "DOĞUBAYAZIT",
+      "ELEŞKİRT",
+      "HAMUR",
+      "MERKEZ",
+      "PATNOS",
+      "TAŞLIÇAY",
+      "TUTAK"
+    ]
+  },
+  {
+    "cityName": "AMASYA",
+    "cityCode": 5,
+    "location": {
+      "latitude": "40.656414089699744",
+      "longitude": "35.83783839497362"
+    },
+    "districts": [
+      "Amasya Merzifon Havalimanı",
+      "GÖYNÜCEK",
+      "GÜMÜŞHACIKÖY",
+      "HAMAMÖZÜ",
+      "MERKEZ",
+      "MERZİFON",
+      "SULUOVA",
+      "TAŞOVA"
+    ]
+  },
+  {
+    "cityName": "ANKARA",
+    "cityCode": 6,
+    "location": {
+      "latitude": "39.92906558998855",
+      "longitude": "32.856137456609794"
+    },
+    "districts": [
+      "AKYURT",
+      "ALTINDAĞ",
+      "Ankara Esenboğa Havalimanı",
+      "AYAŞ",
+      "BALA",
+      "BEYPAZARI",
+      "ÇAMLIDERE",
+      "ÇANKAYA",
+      "ÇUBUK",
+      "ELMADAĞ",
+      "ETİMESGUT",
+      "EVREN",
+      "GÖLBAŞI",
+      "GÜDÜL",
+      "HAYMANA",
+      "KAHRAMANKAZAN",
+      "KALECİK",
+      "KEÇİÖREN",
+      "KIZILCAHAMAM",
+      "MAMAK",
+      "NALLIHAN",
+      "POLATLI",
+      "PURSAKLAR",
+      "ŞEREFLİKOÇHİSAR",
+      "SİNCAN",
+      "YENİMAHALLE"
+    ]
+  },
+  {
+    "cityName": "ANTALYA",
+    "cityCode": 7,
+    "location": {
+      "latitude": "36.89955643241294",
+      "longitude": "30.712609002803916"
+    },
+    "districts": [
+      "AKSEKİ",
+      "AKSU",
+      "ALANYA",
+      "Antalya Havalimanı",
+      "DEMRE",
+      "DÖŞEMEALTI",
+      "ELMALI",
+      "FİNİKE",
+      "GAZİPAŞA",
+      "Gazipaşa Havalimanı",
+      "GÜNDOĞMUŞ",
+      "İBRADI",
+      "KAŞ",
+      "KEMER",
+      "KEPEZ",
+      "KONYAALTI",
+      "KORKUTELİ",
+      "KUMLUCA",
+      "MANAVGAT",
+      "MERKEZ",
+      "MURATPAŞA",
+      "SERİK"
+    ]
+  },
+  {
+    "cityName": "ARTVİN",
+    "cityCode": 8,
+    "location": {
+      "latitude": "41.18098283520333",
+      "longitude": "41.820311604736176"
+    },
+    "districts": [
+      "ARDANUÇ",
+      "ARHAVİ",
+      "BORÇKA",
+      "HOPA",
+      "KEMALPAŞA",
+      "MERKEZ",
+      "MURGUL",
+      "ŞAVŞAT",
+      "YUSUFELİ"
+    ]
+  },
+  {
+    "cityName": "AYDIN",
+    "cityCode": 9,
+    "location": {
+      "latitude": "37.837674209140076",
+      "longitude": "27.84569975739562"
+    },
+    "districts": [
+      "BOZDOĞAN",
+      "BUHARKENT",
+      "ÇİNE",
+      "DİDİM",
+      "EFELER",
+      "GERMENCİK",
+      "İNCİRLİOVA",
+      "KARACASU",
+      "KARPUZLU",
+      "KOÇARLI",
+      "KÖŞK",
+      "KUŞADASI",
+      "KUYUCAK",
+      "MERKEZ",
+      "NAZİLLİ",
+      "SÖKE",
+      "SULTANHİSAR",
+      "YENİPAZAR"
+    ]
+  },
+  {
+    "cityName": "BALIKESİR",
+    "cityCode": 10,
+    "location": {
+      "latitude": "39.65268675058773",
+      "longitude": "27.88665806758761"
+    },
+    "districts": [
+      "ALTIEYLÜL",
+      "AYVALIK",
+      "Balıkesir Koca Seyit Havalimanı",
+      "Balıkesir Merkez Havalimanı",
+      "BALYA",
+      "BANDIRMA",
+      "BİGADİÇ",
+      "BURHANİYE",
+      "DURSUNBEY",
+      "EDREMİT",
+      "ERDEK",
+      "GÖMEÇ",
+      "GÖNEN",
+      "HAVRAN",
+      "İVRİNDİ",
+      "KARESİ",
+      "KEPSUT",
+      "MANYAS",
+      "MARMARA",
+      "MERKEZ",
+      "SAVAŞTEPE",
+      "SINDIRGI",
+      "SUSURLUK"
+    ]
+  },
+  {
+    "cityName": "BİLECİK",
+    "cityCode": 11,
+    "location": {
+      "latitude": "40.14285999112474",
+      "longitude": "29.980339131633258"
+    },
+    "districts": [
+      "BOZÜYÜK",
+      "GÖLPAZARI",
+      "İNHİSAR",
+      "MERKEZ",
+      "OSMANELİ",
+      "PAZARYERİ",
+      "SÖĞÜT",
+      "YENİPAZAR"
+    ]
+  },
+  {
+    "cityName": "BİNGÖL",
+    "cityCode": 12,
+    "location": {
+      "latitude": "38.88531545836014",
+      "longitude": "40.49655477048514"
+    },
+    "districts": [
+      "ADAKLI",
+      "Bingöl Havalimanı",
+      "GENÇ",
+      "KARLIOVA",
+      "KİĞI",
+      "MERKEZ",
+      "SOLHAN",
+      "YAYLADERE",
+      "YEDİSU"
+    ]
+  },
+  {
+    "cityName": "BİTLİS",
+    "cityCode": 13,
+    "location": {
+      "latitude": "38.400255497470326",
+      "longitude": "42.10965683128046"
+    },
+    "districts": [
+      "ADİLCEVAZ",
+      "AHLAT",
+      "GÜROYMAK",
+      "HİZAN",
+      "MERKEZ",
+      "MUTKİ",
+      "TATVAN"
+    ]
+  },
+  {
+    "cityName": "BOLU",
+    "cityCode": 14,
+    "location": {
+      "latitude": "40.73209354591282",
+      "longitude": "31.61067827728359"
+    },
+    "districts": [
+      "DÖRTDİVAN",
+      "GEREDE",
+      "GÖYNÜK",
+      "KIBRISCIK",
+      "MENGEN",
+      "MERKEZ",
+      "MUDURNU",
+      "SEBEN",
+      "YENİÇAĞA"
+    ]
+  },
+  {
+    "cityName": "BURDUR",
+    "cityCode": 15,
+    "location": {
+      "latitude": "37.718386134831114",
+      "longitude": "30.283277627745388"
+    },
+    "districts": [
+      "AĞLASUN",
+      "ALTINYAYLA",
+      "BUCAK",
+      "ÇAVDIR",
+      "ÇELTİKÇİ",
+      "GÖLHİSAR",
+      "KARAMANLI",
+      "KEMER",
+      "MERKEZ",
+      "TEFENNİ",
+      "YEŞİLOVA"
+    ]
+  },
+  {
+    "cityName": "BURSA",
+    "cityCode": 16,
+    "location": {
+      "latitude": "40.21089999992879",
+      "longitude": "29.01855382424962"
+    },
+    "districts": [
+      "Bursa Yenişehir Havalimanı",
+      "BÜYÜKORHAN",
+      "GEMLİK",
+      "GÜRSU",
+      "HARMANCIK",
+      "İNEGÖL",
+      "İZNİK",
+      "KARACABEY",
+      "KELES",
+      "KESTEL",
+      "MUDANYA",
+      "MUSTAFAKEMALPAŞA",
+      "NİLÜFER",
+      "ORHANELİ",
+      "ORHANGAZİ",
+      "OSMANGAZİ",
+      "YENİŞEHİR",
+      "YILDIRIM"
+    ]
+  },
+  {
+    "cityName": "ÇANAKKALE",
+    "cityCode": 17,
+    "location": {
+      "latitude": "40.14616092048858",
+      "longitude": "26.408994777487923"
+    },
+    "districts": [
+      "AYVACIK",
+      "BAYRAMİÇ",
+      "BİGA",
+      "BOZCAADA",
+      "ÇAN",
+      "Çanakkale Havalimanı",
+      "ECEABAT",
+      "EZİNE",
+      "GELİBOLU",
+      "GÖKÇEADA",
+      "Gökçeada Havalimanı",
+      "LAPSEKİ",
+      "MERKEZ",
+      "YENİCE"
+    ]
+  },
+  {
+    "cityName": "ÇANKIRI",
+    "cityCode": 18,
+    "location": {
+      "latitude": "40.59992734577371",
+      "longitude": "33.614930683135235"
+    },
+    "districts": [
+      "ATKARACALAR",
+      "BAYRAMÖREN",
+      "ÇERKEŞ",
+      "ELDİVAN",
+      "ILGAZ",
+      "KIZILIRMAK",
+      "KORGUN",
+      "KURŞUNLU",
+      "MERKEZ",
+      "ORTA",
+      "ŞABANÖZÜ",
+      "YAPRAKLI"
+    ]
+  },
+  {
+    "cityName": "ÇORUM",
+    "cityCode": 19,
+    "location": {
+      "latitude": "40.549173855368714",
+      "longitude": "34.95357623297116"
+    },
+    "districts": [
+      "ALACA",
+      "BAYAT",
+      "BOĞAZKALE",
+      "DODURGA",
+      "İSKİLİP",
+      "KARGI",
+      "LAÇİN",
+      "MECİTÖZÜ",
+      "MERKEZ",
+      "OĞUZLAR",
+      "ORTAKÖY",
+      "OSMANCIK",
+      "SUNGURLU",
+      "UĞURLUDAĞ"
+    ]
+  },
+  {
+    "cityName": "DENİZLİ",
+    "cityCode": 20,
+    "location": {
+      "latitude": "37.78697258112408",
+      "longitude": "29.06688300769594"
+    },
+    "districts": [
+      "ACIPAYAM",
+      "BABADAĞ",
+      "BAKLAN",
+      "BEKİLLİ",
+      "BEYAĞAÇ",
+      "BOZKURT",
+      "BULDAN",
+      "ÇAL",
+      "ÇAMELİ",
+      "ÇARDAK",
+      "ÇİVRİL",
+      "Denizli Çardak Havalimanı",
+      "GÜNEY",
+      "HONAZ",
+      "KALE",
+      "MERKEZ",
+      "MERKEZEFENDİ",
+      "PAMUKKALE",
+      "SARAYKÖY",
+      "SERİNHİSAR",
+      "TAVAS"
+    ]
+  },
+  {
+    "cityName": "DİYARBAKIR",
+    "cityCode": 21,
+    "location": {
+      "latitude": "37.9291892131463",
+      "longitude": "40.197335020894506"
+    },
+    "districts": [
+      "BAĞLAR",
+      "BİSMİL",
+      "ÇERMİK",
+      "ÇINAR",
+      "ÇÜNGÜŞ",
+      "DİCLE",
+      "Diyarbakır Havalimanı",
+      "EĞİL",
+      "ERGANİ",
+      "HANİ",
+      "HAZRO",
+      "KAYAPINAR",
+      "KOCAKÖY",
+      "KULP",
+      "LİCE",
+      "MERKEZ",
+      "SİLVAN",
+      "SUR",
+      "YENİŞEHİR"
+    ]
+  },
+  {
+    "cityName": "EDİRNE",
+    "cityCode": 22,
+    "location": {
+      "latitude": "41.669001942036175",
+      "longitude": "26.570491816939374"
+    },
+    "districts": [
+      "ENEZ",
+      "HAVSA",
+      "İPSALA",
+      "KEŞAN",
+      "LALAPAŞA",
+      "MERİÇ",
+      "MERKEZ",
+      "SÜLOĞLU",
+      "UZUNKÖPRÜ"
+    ]
+  },
+  {
+    "cityName": "ELAZIĞ",
+    "cityCode": 23,
+    "location": {
+      "latitude": "38.67376618944073",
+      "longitude": "39.22304214196473"
+    },
+    "districts": [
+      "AĞIN",
+      "ALACAKAYA",
+      "ARICAK",
+      "BASKİL",
+      "Elazığ Havalimanı",
+      "KARAKOÇAN",
+      "KEBAN",
+      "KOVANCILAR",
+      "MADEN",
+      "MERKEZ",
+      "PALU",
+      "SİVRİCE"
+    ]
+  },
+  {
+    "cityName": "ERZİNCAN",
+    "cityCode": 24,
+    "location": {
+      "latitude": "39.749172995658704",
+      "longitude": "39.49125667963988"
+    },
+    "districts": [
+      "ÇAYIRLI",
+      "Erzincan Havalimanı",
+      "İLİÇ",
+      "KEMAH",
+      "KEMALİYE",
+      "MERKEZ",
+      "OTLUKBELİ",
+      "REFAHİYE",
+      "TERCAN",
+      "ÜZÜMLÜ"
+    ]
+  },
+  {
+    "cityName": "ERZURUM",
+    "cityCode": 25,
+    "location": {
+      "latitude": "39.90505443785093",
+      "longitude": "41.265113566340794"
+    },
+    "districts": [
+      "AŞKALE",
+      "AZİZİYE",
+      "ÇAT",
+      "Erzurum Havalimanı",
+      "HINIS",
+      "HORASAN",
+      "İSPİR",
+      "KARAÇOBAN",
+      "KARAYAZI",
+      "KÖPRÜKÖY",
+      "MERKEZ",
+      "NARMAN",
+      "OLTU",
+      "OLUR",
+      "PALANDÖKEN",
+      "PASİNLER",
+      "PAZARYOLU",
+      "ŞENKAYA",
+      "TEKMAN",
+      "TORTUM",
+      "UZUNDERE",
+      "YAKUTİYE"
+    ]
+  },
+  {
+    "cityName": "ESKİŞEHİR",
+    "cityCode": 26,
+    "location": {
+      "latitude": "39.76848062506613",
+      "longitude": "30.528332225645894"
+    },
+    "districts": [
+      "ALPU",
+      "BEYLİKOVA",
+      "ÇİFTELER",
+      "Eskişehir Anadolu Havalimanı",
+      "GÜNYÜZÜ",
+      "HAN",
+      "İNÖNÜ",
+      "MAHMUDİYE",
+      "MERKEZ",
+      "MİHALGAZİ",
+      "MİHALIÇÇIK",
+      "ODUNPAZARI",
+      "SARICAKAYA",
+      "SEYİTGAZİ",
+      "SİVRİHİSAR",
+      "TEPEBAŞI"
+    ]
+  },
+  {
+    "cityName": "GAZİANTEP",
+    "cityCode": 27,
+    "location": {
+      "latitude": "37.06655392496621",
+      "longitude": "37.376184050697056"
+    },
+    "districts": [
+      "ARABAN",
+      "Gaziantep Havalimanı",
+      "İSLAHİYE",
+      "KARKAMIŞ",
+      "MERKEZ",
+      "NİZİP",
+      "NURDAĞI",
+      "OĞUZELİ",
+      "ŞAHİNBEY",
+      "ŞEHİTKAMİL",
+      "YAVUZELİ"
+    ]
+  },
+  {
+    "cityName": "GİRESUN",
+    "cityCode": 28,
+    "location": {
+      "latitude": "40.917359863916",
+      "longitude": "38.39073452495865"
+    },
+    "districts": [
+      "ALUCRA",
+      "BULANCAK",
+      "ÇAMOLUK",
+      "ÇANAKÇI",
+      "DERELİ",
+      "DOĞANKENT",
+      "ESPİYE",
+      "EYNESİL",
+      "GÖRELE",
+      "GÜCE",
+      "KEŞAP",
+      "MERKEZ",
+      "PİRAZİZ",
+      "ŞEBİNKARAHİSAR",
+      "TİREBOLU",
+      "YAĞLIDERE"
+    ]
+  },
+  {
+    "cityName": "GÜMÜŞHANE",
+    "cityCode": 29,
+    "location": {
+      "latitude": "40.46114614960579",
+      "longitude": "39.47947592519275"
+    },
+    "districts": [
+      "KELKİT",
+      "KÖSE",
+      "KÜRTÜN",
+      "MERKEZ",
+      "ŞİRAN",
+      "TORUL"
+    ]
+  },
+  {
+    "cityName": "HAKKARİ",
+    "cityCode": 30,
+    "location": {
+      "latitude": "37.577133209107465",
+      "longitude": "43.736765976326765"
+    },
+    "districts": [
+      "ÇUKURCA",
+      "Hakkâri Yüksekova Selahaddin Eyyubi Havalimanı",
+      "MERKEZ",
+      "ŞEMDİNLİ",
+      "YÜKSEKOVA"
+    ]
+  },
+  {
+    "cityName": "HATAY",
+    "cityCode": 31,
+    "location": {
+      "latitude": "36.4336722968565",
+      "longitude": "36.24809542059434"
+    },
+    "districts": [
+      "ALTINÖZÜ",
+      "ANTAKYA",
+      "ARSUZ",
+      "BELEN",
+      "DEFNE",
+      "DÖRTYOL",
+      "ERZİN",
+      "HASSA",
+      "Hatay Havalimanı",
+      "İSKENDERUN",
+      "KIRIKHAN",
+      "KUMLU",
+      "MERKEZ",
+      "PAYAS",
+      "REYHANLI",
+      "SAMANDAĞ",
+      "YAYLADAĞI"
+    ]
+  },
+  {
+    "cityName": "ISPARTA",
+    "cityCode": 32,
+    "location": {
+      "latitude": "37.76299845590551",
+      "longitude": "30.55326846308991"
+    },
+    "districts": [
+      "AKSU",
+      "ATABEY",
+      "EĞİRDİR",
+      "GELENDOST",
+      "GÖNEN",
+      "Isparta Süleyman Demirel Havalimanı",
+      "KEÇİBORLU",
+      "MERKEZ",
+      "ŞARKİKARAAĞAÇ",
+      "SENİRKENT",
+      "SÜTÇÜLER",
+      "ULUBORLU",
+      "YALVAÇ",
+      "YENİŞARBADEMLİ"
+    ]
+  },
+  {
+    "cityName": "MERSİN",
+    "cityCode": 33,
+    "location": {
+      "latitude": "36.81005807361944",
+      "longitude": "34.64686264780865"
+    },
+    "districts": [
+      "AKDENİZ",
+      "ANAMUR",
+      "AYDINCIK",
+      "BOZYAZI",
+      "ÇAMLIYAYLA",
+      "ERDEMLİ",
+      "GÜLNAR",
+      "MERKEZ",
+      "MEZİTLİ",
+      "MUT",
+      "SİLİFKE",
+      "TARSUS",
+      "TOROSLAR",
+      "YENİŞEHİR"
+    ]
+  },
+  {
+    "cityName": "İSTANBUL",
+    "cityCode": 34,
+    "location": {
+      "latitude": "41.00520415485816",
+      "longitude": "28.984702720591525"
+    },
+    "districts": [
+      "ADALAR",
+      "ARNAVUTKÖY",
+      "ATAŞEHİR",
+      "Atatürk Havalimanı",
+      "AVCILAR",
+      "BAĞCILAR",
+      "BAHÇELİEVLER",
+      "BAKIRKÖY",
+      "BAŞAKŞEHİR",
+      "BAYRAMPAŞA",
+      "BEŞİKTAŞ",
+      "BEYKOZ",
+      "BEYLİKDÜZÜ",
+      "BEYOĞLU",
+      "BÜYÜKÇEKMECE",
+      "ÇATALCA",
+      "ÇEKMEKÖY",
+      "EMİNÖNÜ",
+      "ESENLER",
+      "ESENYURT",
+      "EYÜPSULTAN",
+      "FATİH",
+      "GAZİOSMANPAŞA",
+      "GÜNGÖREN",
+      "İstanbul Havalimanı",
+      "KADIKÖY",
+      "KAĞITHANE",
+      "KARTAL",
+      "KÜÇÜKÇEKMECE",
+      "MALTEPE",
+      "PENDİK",
+      "Sabiha Gökçen Havalimanı",
+      "SANCAKTEPE",
+      "SARIYER",
+      "ŞİLE",
+      "SİLİVRİ",
+      "ŞİŞLİ",
+      "SULTANBEYLİ",
+      "SULTANGAZİ",
+      "TUZLA",
+      "ÜMRANİYE",
+      "ÜSKÜDAR",
+      "ZEYTİNBURNU"
+    ]
+  },
+  {
+    "cityName": "İZMİR",
+    "cityCode": 35,
+    "location": {
+      "latitude": "38.42298054079509",
+      "longitude": "27.14032510527197"
+    },
+    "districts": [
+      "Adnan Menderes Havalimanı",
+      "ALİAĞA",
+      "BALÇOVA",
+      "BAYINDIR",
+      "BAYRAKLI",
+      "BERGAMA",
+      "BEYDAĞ",
+      "BORNOVA",
+      "BUCA",
+      "ÇEŞME",
+      "ÇİĞLİ",
+      "DİKİLİ",
+      "FOÇA",
+      "GAZİEMİR",
+      "GÜZELBAHÇE",
+      "KARABAĞLAR",
+      "KARABURUN",
+      "KARŞIYAKA",
+      "KEMALPAŞA",
+      "KINIK",
+      "KİRAZ",
+      "KONAK",
+      "MENDERES",
+      "MENEMEN",
+      "NARLIDERE",
+      "ÖDEMİŞ",
+      "SEFERİHİSAR",
+      "SELÇUK",
+      "TİRE",
+      "TORBALI",
+      "URLA"
+    ]
+  },
+  {
+    "cityName": "KARS",
+    "cityCode": 36,
+    "location": {
+      "latitude": "40.60145260723688",
+      "longitude": "43.09792484625451"
+    },
+    "districts": [
+      "AKYAKA",
+      "ARPAÇAY",
+      "DİGOR",
+      "KAĞIZMAN",
+      "Kars Harakani Havalimanı",
+      "MERKEZ",
+      "SARIKAMIŞ",
+      "SELİM",
+      "SUSUZ"
+    ]
+  },
+  {
+    "cityName": "KASTAMONU",
+    "cityCode": 37,
+    "location": {
+      "latitude": "41.394782210341404",
+      "longitude": "33.78318695797315"
+    },
+    "districts": [
+      "ABANA",
+      "AĞLI",
+      "ARAÇ",
+      "AZDAVAY",
+      "BOZKURT",
+      "ÇATALZEYTİN",
+      "CİDE",
+      "DADAY",
+      "DEVREKANİ",
+      "DOĞANYURT",
+      "HANÖNÜ",
+      "İHSANGAZİ",
+      "İNEBOLU",
+      "Kastamonu Havalimanı",
+      "KÜRE",
+      "MERKEZ",
+      "PINARBAŞI",
+      "ŞENPAZAR",
+      "SEYDİLER",
+      "TAŞKÖPRÜ",
+      "TOSYA"
+    ]
+  },
+  {
+    "cityName": "KAYSERİ",
+    "cityCode": 38,
+    "location": {
+      "latitude": "38.7236399379871",
+      "longitude": "35.48426051231206"
+    },
+    "districts": [
+      "AKKIŞLA",
+      "BÜNYAN",
+      "DEVELİ",
+      "Erkilet Havalimanı",
+      "FELAHİYE",
+      "HACILAR",
+      "İNCESU",
+      "KOCASİNAN",
+      "MELİKGAZİ",
+      "ÖZVATAN",
+      "PINARBAŞI",
+      "SARIOĞLAN",
+      "SARIZ",
+      "TALAS",
+      "TOMARZA",
+      "YAHYALI",
+      "YEŞİLHİSAR"
+    ]
+  },
+  {
+    "cityName": "KIRKLARELİ",
+    "cityCode": 39,
+    "location": {
+      "latitude": "41.73550962649195",
+      "longitude": "27.223201332199526"
+    },
+    "districts": [
+      "BABAESKİ",
+      "DEMİRKÖY",
+      "KOFÇAZ",
+      "LÜLEBURGAZ",
+      "MERKEZ",
+      "PEHLİVANKÖY",
+      "PINARHİSAR",
+      "VİZE"
+    ]
+  },
+  {
+    "cityName": "KIRŞEHİR",
+    "cityCode": 40,
+    "location": {
+      "latitude": "39.14602349401668",
+      "longitude": "34.159911599167216"
+    },
+    "districts": [
+      "AKÇAKENT",
+      "AKPINAR",
+      "BOZTEPE",
+      "ÇİÇEKDAĞI",
+      "KAMAN",
+      "MERKEZ",
+      "MUCUR"
+    ]
+  },
+  {
+    "cityName": "KOCAELİ",
+    "cityCode": 41,
+    "location": {
+      "latitude": "40.76460618945984",
+      "longitude": "29.940851832611646"
+    },
+    "districts": [
+      "BAŞİSKELE",
+      "ÇAYIROVA",
+      "Cengiz Topel Havalimanı",
+      "DARICA",
+      "DERİNCE",
+      "DİLOVASI",
+      "GEBZE",
+      "GÖLCÜK",
+      "İZMİT",
+      "KANDIRA",
+      "KARAMÜRSEL",
+      "KARTEPE",
+      "KÖRFEZ",
+      "MERKEZ"
+    ]
+  },
+  {
+    "cityName": "KONYA",
+    "cityCode": 42,
+    "location": {
+      "latitude": "37.87026149873965",
+      "longitude": "32.50990439825829"
+    },
+    "districts": [
+      "AHIRLI",
+      "AKÖREN",
+      "AKŞEHİR",
+      "ALTINEKİN",
+      "BEYŞEHİR",
+      "BOZKIR",
+      "ÇELTİK",
+      "CİHANBEYLİ",
+      "ÇUMRA",
+      "DERBENT",
+      "DEREBUCAK",
+      "DOĞANHİSAR",
+      "EMİRGAZİ",
+      "EREĞLİ",
+      "GÜNEYSINIR",
+      "HADİM",
+      "HALKAPINAR",
+      "HÜYÜK",
+      "ILGIN",
+      "KADINHANI",
+      "KARAPINAR",
+      "KARATAY",
+      "Konya Havalimanı",
+      "KULU",
+      "MERAM",
+      "SARAYÖNÜ",
+      "SELÇUKLU",
+      "SEYDİŞEHİR",
+      "TAŞKENT",
+      "TUZLUKÇU",
+      "YALIHÜYÜK",
+      "YUNAK"
+    ]
+  },
+  {
+    "cityName": "KÜTAHYA",
+    "cityCode": 43,
+    "location": {
+      "latitude": "39.420552066823944",
+      "longitude": "29.98480485961995"
+    },
+    "districts": [
+      "ALTINTAŞ",
+      "ASLANAPA",
+      "ÇAVDARHİSAR",
+      "DOMANİÇ",
+      "DUMLUPINAR",
+      "EMET",
+      "GEDİZ",
+      "HİSARCIK",
+      "MERKEZ",
+      "PAZARLAR",
+      "ŞAPHANE",
+      "SİMAV",
+      "TAVŞANLI",
+      "Zafer Havalimanı"
+    ]
+  },
+  {
+    "cityName": "MALATYA",
+    "cityCode": 44,
+    "location": {
+      "latitude": "38.35209313381025",
+      "longitude": "38.308572501820876"
+    },
+    "districts": [
+      "AKÇADAĞ",
+      "ARAPGİR",
+      "ARGUVAN",
+      "BATTALGAZİ",
+      "DARENDE",
+      "DOĞANŞEHİR",
+      "DOĞANYOL",
+      "Erhaç Havalimanı",
+      "HEKİMHAN",
+      "KALE",
+      "KULUNCAK",
+      "MERKEZ",
+      "PÜTÜRGE",
+      "YAZIHAN",
+      "YEŞİLYURT"
+    ]
+  },
+  {
+    "cityName": "MANİSA",
+    "cityCode": 45,
+    "location": {
+      "latitude": "38.62106697788065",
+      "longitude": "27.402410522730644"
+    },
+    "districts": [
+      "AHMETLİ",
+      "AKHİSAR",
+      "ALAŞEHİR",
+      "DEMİRCİ",
+      "GÖLMARMARA",
+      "GÖRDES",
+      "KIRKAĞAÇ",
+      "KÖPRÜBAŞI",
+      "KULA",
+      "MERKEZ",
+      "SALİHLİ",
+      "SARIGÖL",
+      "SARUHANLI",
+      "ŞEHZADELER",
+      "SELENDİ",
+      "SOMA",
+      "TURGUTLU",
+      "YUNUSEMRE"
+    ]
+  },
+  {
+    "cityName": "KAHRAMANMARAŞ",
+    "cityCode": 46,
+    "location": {
+      "latitude": "37.5745626483992",
+      "longitude": "36.922749172805055"
+    },
+    "districts": [
+      "AFŞİN",
+      "ANDIRIN",
+      "ÇAĞLAYANCERİT",
+      "DULKADİROĞLU",
+      "EKİNÖZÜ",
+      "ELBİSTAN",
+      "GÖKSUN",
+      "Kahramanmaraş Havalimanı",
+      "MERKEZ",
+      "NURHAK",
+      "ONİKİŞUBAT",
+      "PAZARCIK",
+      "TÜRKOĞLU"
+    ]
+  },
+  {
+    "cityName": "MARDİN",
+    "cityCode": 47,
+    "location": {
+      "latitude": "37.32082369388321",
+      "longitude": "40.72366130958631"
+    },
+    "districts": [
+      "ARTUKLU",
+      "DARGEÇİT",
+      "DERİK",
+      "KIZILTEPE",
+      "Mardin Havalimanı",
+      "MAZIDAĞI",
+      "MERKEZ",
+      "MİDYAT",
+      "NUSAYBİN",
+      "ÖMERLİ",
+      "SAVUR",
+      "YEŞİLLİ"
+    ]
+  },
+  {
+    "cityName": "MUĞLA",
+    "cityCode": 48,
+    "location": {
+      "latitude": "37.21523141802626",
+      "longitude": "28.363953632027272"
+    },
+    "districts": [
+      "BODRUM",
+      "DALAMAN",
+      "Dalaman Havalimanı",
+      "DATÇA",
+      "FETHİYE",
+      "KAVAKLIDERE",
+      "KÖYCEĞİZ",
+      "MARMARİS",
+      "MENTEŞE",
+      "MERKEZ",
+      "MİLAS",
+      "Milas-Bodrum Havalimanı",
+      "ORTACA",
+      "SEYDİKEMER",
+      "ULA",
+      "YATAĞAN"
+    ]
+  },
+  {
+    "cityName": "MUŞ",
+    "cityCode": 49,
+    "location": {
+      "latitude": "38.74456434461314",
+      "longitude": "41.50509155293953"
+    },
+    "districts": [
+      "BULANIK",
+      "HASKÖY",
+      "KORKUT",
+      "MALAZGİRT",
+      "MERKEZ",
+      "Muş Havalimanı",
+      "VARTO"
+    ]
+  },
+  {
+    "cityName": "NEVŞEHİR",
+    "cityCode": 50,
+    "location": {
+      "latitude": "38.62804759940235",
+      "longitude": "34.71597063689714"
+    },
+    "districts": [
+      "ACIGÖL",
+      "AVANOS",
+      "DERİNKUYU",
+      "GÜLŞEHİR",
+      "HACIBEKTAŞ",
+      "KOZAKLI",
+      "MERKEZ",
+      "Nevşehir Kapadokya Havalimanı",
+      "ÜRGÜP"
+    ]
+  },
+  {
+    "cityName": "NİĞDE",
+    "cityCode": 51,
+    "location": {
+      "latitude": "37.97017448889741",
+      "longitude": "34.67660483253899"
+    },
+    "districts": [
+      "ALTUNHİSAR",
+      "BOR",
+      "ÇAMARDI",
+      "ÇİFTLİK",
+      "MERKEZ",
+      "ULUKIŞLA"
+    ]
+  },
+  {
+    "cityName": "ORDU",
+    "cityCode": 52,
+    "location": {
+      "latitude": "40.97574570669062",
+      "longitude": "37.90482365565931"
+    },
+    "districts": [
+      "AKKUŞ",
+      "ALTINORDU",
+      "AYBASTI",
+      "ÇAMAŞ",
+      "ÇATALPINAR",
+      "ÇAYBAŞI",
+      "FATSA",
+      "GÖLKÖY",
+      "GÜLYALI",
+      "GÜRGENTEPE",
+      "İKİZCE",
+      "KABADÜZ",
+      "KABATAŞ",
+      "KORGAN",
+      "KUMRU",
+      "MERKEZ",
+      "MESUDİYE",
+      "Ordu-Giresun Havalimanı",
+      "PERŞEMBE",
+      "ULUBEY",
+      "ÜNYE"
+    ]
+  },
+  {
+    "cityName": "RİZE",
+    "cityCode": 53,
+    "location": {
+      "latitude": "41.02498171572749",
+      "longitude": "40.518799672149406"
+    },
+    "districts": [
+      "ARDEŞEN",
+      "ÇAMLIHEMŞİN",
+      "ÇAYELİ",
+      "DEREPAZARI",
+      "FINDIKLI",
+      "GÜNEYSU",
+      "HEMŞİN",
+      "İKİZDERE",
+      "İYİDERE",
+      "KALKANDERE",
+      "MERKEZ",
+      "PAZAR"
+    ]
+  },
+  {
+    "cityName": "SAKARYA",
+    "cityCode": 54,
+    "location": {
+      "latitude": "40.77154388458755",
+      "longitude": "30.394979048580485"
+    },
+    "districts": [
+      "ADAPAZARI",
+      "AKYAZI",
+      "ARİFİYE",
+      "ERENLER",
+      "FERİZLİ",
+      "GEYVE",
+      "HENDEK",
+      "KARAPÜRÇEK",
+      "KARASU",
+      "KAYNARCA",
+      "KOCAALİ",
+      "MERKEZ",
+      "PAMUKOVA",
+      "SAPANCA",
+      "SERDİVAN",
+      "SÖĞÜTLÜ",
+      "TARAKLI"
+    ]
+  },
+  {
+    "cityName": "SAMSUN",
+    "cityCode": 55,
+    "location": {
+      "latitude": "41.28050194357994",
+      "longitude": "36.33309555169409"
+    },
+    "districts": [
+      "19 MAYIS",
+      "ALAÇAM",
+      "ASARCIK",
+      "ATAKUM",
+      "AYVACIK",
+      "BAFRA",
+      "CANİK",
+      "ÇARŞAMBA",
+      "HAVZA",
+      "İLKADIM",
+      "KAVAK",
+      "LADİK",
+      "MERKEZ",
+      "SALIPAZARI",
+      "Samsun Çarşamba Havalimanı",
+      "TEKKEKÖY",
+      "TERME",
+      "VEZİRKÖPRÜ",
+      "YAKAKENT"
+    ]
+  },
+  {
+    "cityName": "SİİRT",
+    "cityCode": 56,
+    "location": {
+      "latitude": "37.931518461363964",
+      "longitude": "41.936759080170695"
+    },
+    "districts": [
+      "BAYKAN",
+      "ERUH",
+      "KURTALAN",
+      "MERKEZ",
+      "PERVARİ",
+      "Siirt Havalimanı",
+      "ŞİRVAN",
+      "TİLLO"
+    ]
+  },
+  {
+    "cityName": "SİNOP",
+    "cityCode": 57,
+    "location": {
+      "latitude": "42.02763703861965",
+      "longitude": "35.15166443788766"
+    },
+    "districts": [
+      "AYANCIK",
+      "BOYABAT",
+      "DİKMEN",
+      "DURAĞAN",
+      "ERFELEK",
+      "GERZE",
+      "MERKEZ",
+      "SARAYDÜZÜ",
+      "Sinop Havalimanı",
+      "TÜRKELİ"
+    ]
+  },
+  {
+    "cityName": "SİVAS",
+    "cityCode": 58,
+    "location": {
+      "latitude": "39.75063290239492",
+      "longitude": "37.01427651937807"
+    },
+    "districts": [
+      "AKINCILAR",
+      "ALTINYAYLA",
+      "DİVRİĞİ",
+      "DOĞANŞAR",
+      "GEMEREK",
+      "GÖLOVA",
+      "GÜRÜN",
+      "HAFİK",
+      "İMRANLI",
+      "KANGAL",
+      "KOYULHİSAR",
+      "MERKEZ",
+      "ŞARKIŞLA",
+      "Sivas Nuri Demirağ Havalimanı",
+      "SUŞEHRİ",
+      "ULAŞ",
+      "YILDIZELİ",
+      "ZARA"
+    ]
+  },
+  {
+    "cityName": "TEKİRDAĞ",
+    "cityCode": 59,
+    "location": {
+      "latitude": "40.97807590633732",
+      "longitude": "27.509449645594447"
+    },
+    "districts": [
+      "ÇERKEZKÖY",
+      "ÇORLU",
+      "ERGENE",
+      "HAYRABOLU",
+      "KAPAKLI",
+      "MALKARA",
+      "MARMARAEREĞLİSİ",
+      "MERKEZ",
+      "MURATLI",
+      "SARAY",
+      "ŞARKÖY",
+      "SÜLEYMANPAŞA",
+      "Tekirdağ Çorlu Havalimanı"
+    ]
+  },
+  {
+    "cityName": "TOKAT",
+    "cityCode": 60,
+    "location": {
+      "latitude": "40.33603368620614",
+      "longitude": "36.55015094717981"
+    },
+    "districts": [
+      "ALMUS",
+      "ARTOVA",
+      "BAŞÇİFTLİK",
+      "ERBAA",
+      "MERKEZ",
+      "NİKSAR",
+      "PAZAR",
+      "REŞADİYE",
+      "SULUSARAY",
+      "Tokat Havalimanı",
+      "TURHAL",
+      "YEŞİLYURT",
+      "ZİLE"
+    ]
+  },
+  {
+    "cityName": "TRABZON",
+    "cityCode": 61,
+    "location": {
+      "latitude": "40.803488190203055",
+      "longitude": "39.59782847728947"
+    },
+    "districts": [
+      "AKÇAABAT",
+      "ARAKLI",
+      "ARSİN",
+      "BEŞİKDÜZÜ",
+      "ÇARŞIBAŞI",
+      "ÇAYKARA",
+      "DERNEKPAZARI",
+      "DÜZKÖY",
+      "HAYRAT",
+      "KÖPRÜBAŞI",
+      "MAÇKA",
+      "MERKEZ",
+      "OF",
+      "ORTAHİSAR",
+      "ŞALPAZARI",
+      "SÜRMENE",
+      "TONYA",
+      "Trabzon Havalimanı",
+      "VAKFIKEBİR",
+      "YOMRA"
+    ]
+  },
+  {
+    "cityName": "TUNCELİ",
+    "cityCode": 62,
+    "location": {
+      "latitude": "39.10609350774923",
+      "longitude": "39.54853713166656"
+    },
+    "districts": [
+      "ÇEMİŞGEZEK",
+      "HOZAT",
+      "MAZGİRT",
+      "MERKEZ",
+      "NAZIMİYE",
+      "OVACIK",
+      "PERTEK",
+      "PÜLÜMÜR"
+    ]
+  },
+  {
+    "cityName": "ŞANLIURFA",
+    "cityCode": 63,
+    "location": {
+      "latitude": "37.16738261445575",
+      "longitude": "38.79972969741217"
+    },
+    "districts": [
+      "AKÇAKALE",
+      "BİRECİK",
+      "BOZOVA",
+      "CEYLANPINAR",
+      "EYYÜBİYE",
+      "HALFETİ",
+      "HALİLİYE",
+      "HARRAN",
+      "HİLVAN",
+      "KARAKÖPRÜ",
+      "MERKEZ",
+      "Şanlıurfa GAP Havalimanı",
+      "SİVEREK",
+      "SURUÇ",
+      "VİRANŞEHİR"
+    ]
+  },
+  {
+    "cityName": "UŞAK",
+    "cityCode": 64,
+    "location": {
+      "latitude": "38.67427393759277",
+      "longitude": "29.404311018118058"
+    },
+    "districts": [
+      "BANAZ",
+      "EŞME",
+      "KARAHALLI",
+      "MERKEZ",
+      "SİVASLI",
+      "ULUBEY",
+      "Uşak Havalimanı"
+    ]
+  },
+  {
+    "cityName": "VAN",
+    "cityCode": 65,
+    "location": {
+      "latitude": "38.52300634564317",
+      "longitude": "43.45176937524705"
+    },
+    "districts": [
+      "BAHÇESARAY",
+      "BAŞKALE",
+      "ÇALDIRAN",
+      "ÇATAK",
+      "EDREMİT",
+      "ERCİŞ",
+      "Ferit Melen Havalimanı",
+      "GEVAŞ",
+      "GÜRPINAR",
+      "İPEKYOLU",
+      "MERKEZ",
+      "MURADİYE",
+      "ÖZALP",
+      "SARAY",
+      "TUŞBA"
+    ]
+  },
+  {
+    "cityName": "YOZGAT",
+    "cityCode": 66,
+    "location": {
+      "latitude": "39.821349132291566",
+      "longitude": "34.80846710588675"
+    },
+    "districts": [
+      "AKDAĞMADENİ",
+      "AYDINCIK",
+      "BOĞAZLIYAN",
+      "ÇANDIR",
+      "ÇAYIRALAN",
+      "ÇEKEREK",
+      "KADIŞEHRİ",
+      "MERKEZ",
+      "SARAYKENT",
+      "SARIKAYA",
+      "ŞEFAATLİ",
+      "SORGUN",
+      "YENİFAKILI",
+      "YERKÖY"
+    ]
+  },
+  {
+    "cityName": "ZONGULDAK",
+    "cityCode": 67,
+    "location": {
+      "latitude": "41.452693636137255",
+      "longitude": "31.783333326295114"
+    },
+    "districts": [
+      "ALAPLI",
+      "ÇAYCUMA",
+      "DEVREK",
+      "EREĞLİ",
+      "GÖKÇEBEY",
+      "KİLİMLİ",
+      "KOZLU",
+      "MERKEZ",
+      "Zonguldak Havalimanı"
+    ]
+  },
+  {
+    "cityName": "AKSARAY",
+    "cityCode": 68,
+    "location": {
+      "latitude": "38.36830853860175",
+      "longitude": "34.02567617727169"
+    },
+    "districts": [
+      "AĞAÇÖREN",
+      "ESKİL",
+      "GÜLAĞAÇ",
+      "GÜZELYURT",
+      "MERKEZ",
+      "ORTAKÖY",
+      "SARIYAHŞİ",
+      "SULTANHANI"
+    ]
+  },
+  {
+    "cityName": "BAYBURT",
+    "cityCode": 69,
+    "location": {
+      "latitude": "40.26029161278271",
+      "longitude": "40.22901357759981"
+    },
+    "districts": [
+      "AYDINTEPE",
+      "DEMİRÖZÜ",
+      "MERKEZ"
+    ]
+  },
+  {
+    "cityName": "KARAMAN",
+    "cityCode": 70,
+    "location": {
+      "latitude": "37.18078783448003",
+      "longitude": "33.22265802133988"
+    },
+    "districts": [
+      "AYRANCI",
+      "BAŞYAYLA",
+      "ERMENEK",
+      "KAZIMKARABEKİR",
+      "MERKEZ",
+      "SARIVELİLER"
+    ]
+  },
+  {
+    "cityName": "KIRIKKALE",
+    "cityCode": 71,
+    "location": {
+      "latitude": "39.83993908746307",
+      "longitude": "33.50850193956864"
+    },
+    "districts": [
+      "BAHŞİLİ",
+      "BALIŞEYH",
+      "ÇELEBİ",
+      "DELİCE",
+      "KARAKEÇİLİ",
+      "KESKİN",
+      "MERKEZ",
+      "SULAKYURT",
+      "YAHŞİHAN"
+    ]
+  },
+  {
+    "cityName": "BATMAN",
+    "cityCode": 72,
+    "location": {
+      "latitude": "37.88928073593181",
+      "longitude": "41.130534656965125"
+    },
+    "districts": [
+      "Batman Havalimanı",
+      "BEŞİRİ",
+      "GERCÜŞ",
+      "HASANKEYF",
+      "KOZLUK",
+      "MERKEZ",
+      "SASON"
+    ]
+  },
+  {
+    "cityName": "ŞIRNAK",
+    "cityCode": 73,
+    "location": {
+      "latitude": "37.51916485427046",
+      "longitude": "42.453381430936496"
+    },
+    "districts": [
+      "BEYTÜŞŞEBAP",
+      "CİZRE",
+      "GÜÇLÜKONAK",
+      "İDİL",
+      "MERKEZ",
+      "SİLOPİ",
+      "Şırnak Şerafettin Elçi Havalimanı",
+      "ULUDERE"
+    ]
+  },
+  {
+    "cityName": "BARTIN",
+    "cityCode": 74,
+    "location": {
+      "latitude": "41.63760352309636",
+      "longitude": "32.335541858885406"
+    },
+    "districts": [
+      "AMASRA",
+      "KURUCAŞİLE",
+      "MERKEZ",
+      "ULUS"
+    ]
+  },
+  {
+    "cityName": "ARDAHAN",
+    "cityCode": 75,
+    "location": {
+      "latitude": "41.113203871531226",
+      "longitude": "42.70241839316393"
+    },
+    "districts": [
+      "ÇILDIR",
+      "DAMAL",
+      "GÖLE",
+      "HANAK",
+      "MERKEZ",
+      "POSOF"
+    ]
+  },
+  {
+    "cityName": "IĞDIR",
+    "cityCode": 76,
+    "location": {
+      "latitude": "39.9201568172167",
+      "longitude": "44.043299386278655"
+    },
+    "districts": [
+      "ARALIK",
+      "Iğdır Havalimanı",
+      "KARAKOYUNLU",
+      "MERKEZ",
+      "TUZLUCA"
+    ]
+  },
+  {
+    "cityName": "YALOVA",
+    "cityCode": 77,
+    "location": {
+      "latitude": "40.649136722039565",
+      "longitude": "29.255544822202893"
+    },
+    "districts": [
+      "ALTINOVA",
+      "ARMUTLU",
+      "ÇİFTLİKKÖY",
+      "ÇINARCIK",
+      "MERKEZ",
+      "TERMAL"
+    ]
+  },
+  {
+    "cityName": "KARABÜK",
+    "cityCode": 78,
+    "location": {
+      "latitude": "41.2001459575827",
+      "longitude": "32.62199396689917"
+    },
+    "districts": [
+      "EFLANİ",
+      "ESKİPAZAR",
+      "MERKEZ",
+      "OVACIK",
+      "SAFRANBOLU",
+      "YENİCE"
+    ]
+  },
+  {
+    "cityName": "KİLİS",
+    "cityCode": 79,
+    "location": {
+      "latitude": "36.716184978913844",
+      "longitude": "37.11497887173625"
+    },
+    "districts": [
+      "ELBEYLİ",
+      "MERKEZ",
+      "MUSABEYLİ",
+      "POLATELİ"
+    ]
+  },
+  {
+    "cityName": "OSMANİYE",
+    "cityCode": 80,
+    "location": {
+      "latitude": "37.07406073999466",
+      "longitude": "36.24578947279144"
+    },
+    "districts": [
+      "BAHÇE",
+      "DÜZİÇİ",
+      "HASANBEYLİ",
+      "KADİRLİ",
+      "MERKEZ",
+      "SUMBAS",
+      "TOPRAKKALE"
+    ]
+  },
+  {
+    "cityName": "D\u00dcZCE",
+    "cityCode": 81,
+    "location": {
+      "latitude": "40.83886939749482",
+      "longitude": "31.161712492576665"
+    },
+    "districts": [
+      "KAYNA\u015eLI",
+      "G\u00dcM\u00dc\u015eOVA",
+      "\u00c7\u0130L\u0130ML\u0130",
+      "G\u00d6LYAKA",
+      "CUMAYER\u0130",
+      "YI\u011eILCA",
+      "MERKEZ",
+      "AK\u00c7AKOCA"
+    ]
+  }
+]

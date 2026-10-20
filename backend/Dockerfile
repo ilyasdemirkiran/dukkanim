@@ -1,31 +1,20 @@
-FROM golang:alpine AS builder
+FROM oven/bun:1.4-alpine
 
 WORKDIR /app
 
-# Go mod dosyalarını kopyala ve bağımlılıkları indir
-COPY go.mod go.sum ./
-RUN go mod download
+# Bağımlılık dosyalarını kopyala
+COPY package.json bun.lock* ./
 
-# Tüm kodları kopyala
+# Bağımlılıkları yükle
+RUN bun install --production
+
+# Kaynak kodları kopyala
 COPY . .
 
-# Uygulamayı derle
-RUN CGO_ENABLED=0 GOOS=linux go build -o main ./cmd/api
+# Port 4444
+EXPOSE 4444
 
-# Final stage - Sadece çalışan uygulamayı alarak boyutu küçültüyoruz
-FROM alpine:latest
+ENV PORT=4444
+ENV NODE_ENV=production
 
-WORKDIR /app
-
-# Derlenmiş dosyayı kopyala
-COPY --from=builder /app/main .
-
-# Gerekliyse .env ve json dosyasını kopyala (Docker Compose üzerinden mount ediliyor olsa da burada bulunsun)
-COPY .env* ./
-COPY google-services.json* ./
-
-# Portu dışarıya aç
-EXPOSE 3001
-
-# Uygulamayı çalıştır
-CMD ["./main"]
+CMD ["bun", "src/index.ts"]
